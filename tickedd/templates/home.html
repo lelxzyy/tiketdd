@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan</title>
+    <link rel="stylesheet" href="card1.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Foto di atas -->
+        <div class="photo-section">
+            <img src="https://via.placeholder.com/1200x400" alt="Header Image">
+        </div>
+
+        <!-- Form -->
+        <div class="form-container">
+            <h1>Form Pemesanan</h1>
+            <form id="reservationForm">
+                <div class="form-group">
+                    <label for="name">Nama:</label>
+                    <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Nomor Telepon:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Masukkan nomor telepon Anda" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+                    <div id="emailError" class="error-message hidden">Email tidak valid!</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Instansi:</label>
+                    <select id="category" name="category" required>
+                        <option value="" disabled selected>Pilih instansi</option>
+                        <option value="mahasiswa">Mahasiswa</option>
+                        <option value="pelajar">Pelajar</option>
+                        <option value="umum">Umum</option>
+                    </select>
+                </div>
+
+                <button type="submit">Kirim</button>
+            </form>
+
+            <!-- Pesan sukses -->
+            <div id="successMessage" class="hidden">
+                <p>Berhasil Memesan!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<script>
+    // Tangkap elemen form, pesan sukses, dan pesan error
+const form = document.getElementById('reservationForm');
+const successMessage = document.getElementById('successMessage');
+const emailInput = document.getElementById('email');
+const emailError = document.getElementById('emailError');
+
+// Fungsi untuk memvalidasi email
+function validateEmail(email) {
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailPattern.test(email);
+}
+
+// Tambahkan event listener pada form
+form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Mencegah pengiriman form default
+
+    // Validasi email
+    const emailValue = emailInput.value;
+    if (!validateEmail(emailValue)) {
+        emailError.classList.remove('hidden');
+        return;
+    } else {
+        emailError.classList.add('hidden');
+    }
+
+    // Tampilkan pesan sukses
+    successMessage.classList.remove('hidden');
+
+    // Setelah 2 detik, redirect ke halaman index.html
+    setTimeout(function() {
+        window.location.href = 'index.html'; // Ganti dengan nama file halaman awal Anda
+    }, 2000); // Menunggu 2 detik sebelum pengalihan
+});
+
+</script>

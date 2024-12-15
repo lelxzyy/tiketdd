@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Masukkan Gmail Anda</h1>
+        <form id="gmailForm" class="gmail-form">
+            <label for="gmail">Alamat Gmail:</label>
+            <input type="email" id="gmail" name="gmail" placeholder="contoh@gmail.com" required>
+            <button type="submit">Kirim</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<script>// Tangkap elemen form
+    const gmailForm = document.getElementById('gmailForm');
+    
+    // Tambahkan event listener untuk submit form
+    gmailForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Mencegah pengiriman form default
+    
+        // Tampilkan pesan sukses (opsional)
+        alert('Gmail berhasil dikirim!');
+    
+        // Arahkan kembali ke halaman awal
+        window.location.href = 'abislogin.html'; // Ganti dengan nama file halaman awal Anda
+    });
+    </script>

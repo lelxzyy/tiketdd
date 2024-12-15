@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketDD</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">TicketDD</div>
+        <ul class="navbar-menu">
+            <li><a href="index.html">Penjualan</a></li>
+        </ul>
+        <div class="navbar-toggle" id="navbarToggle">☰</div>
+    </nav>
+    <div class="container">
+        <!-- Teks Panjang -->
+        <div class="text-section">
+            <h1>Alur Pemesanan</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu. 
+                Sed dapibus mi in augue efficitur, vitae auctor sapien mattis. Nulla facilisi. Duis tristique, 
+                erat vel cursus placerat, odio massa ultricies neque, nec auctor arcu ligula sit amet elit.
+            </p>
+        </div>
+
+        <!-- Cards -->
+        <div class="card-section">
+            <!-- Card 1 -->
+            <a href="card1.html" class="card">
+                <img src="https://via.placeholder.com/300" alt="Card Image 1">
+                <h3>Roro Jonggrang #1</h3>
+                <p>Deskripsi singkat tentang card 1. Klik untuk melihat lebih lanjut.</p>
+            </a>
+            <!-- Card 2 -->
+            <a href="card2.html" class="card">
+                <img src="https://via.placeholder.com/300" alt="Card Image 2">
+                <h3>Coming Soon</h3>
+                <p>Deskripsi singkat tentang card 2. Klik untuk melihat lebih lanjut.</p>
+            </a>
+            <!-- Card 3 -->
+            <a href="card3.html" class="card">
+                <img src="https://via.placeholder.com/300" alt="Card Image 3">
+                <h3>Coming Soon</h3>
+                <p>Deskripsi singkat tentang card 3. Klik untuk melihat lebih lanjut.</p>
+            </a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<script>
+    // Toggle Navbar Menu
+const toggleButton = document.getElementById('navbarToggle');
+const menu = document.querySelector('.navbar-menu');
+
+toggleButton.addEventListener('click', () => {
+    menu.classList.toggle('active');
+});
+
+</script>
